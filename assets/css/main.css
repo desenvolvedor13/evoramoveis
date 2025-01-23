@@ -28,6 +28,13 @@ section, summary, time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
+.custom-img {
+  width: 50% !important;
+  height: auto !important;
+  max-width: 100px !important;
+  background-color: rgba(255, 0, 0, 0.3); /* Fundo temporário para visualização */
+}
+
 
 body {
 	line-height: 1;
@@ -1583,6 +1590,31 @@ input, select, textarea {
 	form ::-moz-focus-inner {
 		border: 0;
 	}
+.floating-img {
+  width: 75%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 15px; /* Borda arredondada para suavizar */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra para efeito de destaque */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Efeito de "flutuação" ao passar o mouse */
+.floating-img:hover {
+  transform: translateY(-10px) scale(1.05); /* Levanta e aumenta ligeiramente */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Aumenta a sombra ao passar o mouse */
+}
+
+/* Animação sutil para criar efeito de movimento */
+@keyframes floating {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.floating-img {
+  animation: floating 3s ease-in-out infinite; /* Movimento contínuo suave */
+}
 
 /* Image */
 
@@ -2004,7 +2036,7 @@ input, select, textarea {
 		.wrapper.style1 {
 			background: #e97770 url("images/overlay.png");
 			color: #eee;
-			color: rgba(255, 255, 255, 0.75);
+			color: rgba(255, 255, 155, 0.75);
 		}
 
 			.wrapper.style1 .title {
