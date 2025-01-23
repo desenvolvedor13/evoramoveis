@@ -2042,35 +2042,35 @@ input, select, textarea {
 			}
 
 		.wrapper.style1 {
-			background: #00f4f5 url("images/overlay.png");
+			background: #FFFFFF url("images/overlay.png");
 			color: #ff00ff;
 			color: rgba(57, 255, 255, 0.75);
 		}
 
 			.wrapper.style1 .title {
-				background: #00f4f5 url("images/overlay.png");
+				background: #FFFFFF url("images/overlay.png");
 				color: #484d55;
 			}
 
 			.wrapper.style1 h1, .wrapper.style1 h2, .wrapper.style1 h3, .wrapper.style1 h4, .wrapper.style1 h5, .wrapper.style1 h6, .wrapper.style1 strong, .wrapper.style1 b, .wrapper.style1 a {
-				color: #00f4f5;
+				color: #FFFFFF;
 			}
 
 		.wrapper.style2 {
-			background: #00f4f5;
+			background: #FFFFFF;
 		}
 
 			.wrapper.style2 .title {
-				background: #00f4f5;
+				background: #FFFFFF;
 				color: #484d55;
 			}
 
 		.wrapper.style3 {
-			background: #00f4f5 url("images/overlay.png");
+			background: #FFFFFF url("images/overlay.png");
 		}
 
 			.wrapper.style3 .title {
-				background: #00f4f5 url("images/overlay.png");
+				background: #FFFFFF url("images/overlay.png");
 				color: #484d55;
 			}
 
