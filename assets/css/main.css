@@ -35,6 +35,11 @@ footer, header, hgroup, menu, nav, section {
   background-color: rgba(255, 0, 0, 0.3); /* Fundo temporário para visualização */
 }
 
+.mobile-hide {
+  background-color: #FFD700;
+  height: 2px;  /* Ajuste a altura conforme necessário */
+  width: 100%;  /* Largura total para visualização */
+}
 
 body {
 	line-height: 1;
@@ -1511,6 +1516,9 @@ input, select, textarea {
 			table.default tfoot {
 				background: #eee;
 			}
+ 
+ 
+
 
 /* Form */
 
@@ -2034,35 +2042,35 @@ input, select, textarea {
 			}
 
 		.wrapper.style1 {
-			background: #e97770 url("images/overlay.png");
-			color: #eee;
-			color: rgba(255, 255, 155, 0.75);
+			background: #00f4f5 url("images/overlay.png");
+			color: #ff00ff;
+			color: rgba(57, 255, 255, 0.75);
 		}
 
 			.wrapper.style1 .title {
-				background: #e97770 url("images/overlay.png");
-				color: #fff;
+				background: #00f4f5 url("images/overlay.png");
+				color: #484d55;
 			}
 
 			.wrapper.style1 h1, .wrapper.style1 h2, .wrapper.style1 h3, .wrapper.style1 h4, .wrapper.style1 h5, .wrapper.style1 h6, .wrapper.style1 strong, .wrapper.style1 b, .wrapper.style1 a {
-				color: #fff;
+				color: #00f4f5;
 			}
 
 		.wrapper.style2 {
-			background: #fff;
+			background: #00f4f5;
 		}
 
 			.wrapper.style2 .title {
-				background: #fff;
+				background: #00f4f5;
 				color: #484d55;
 			}
 
 		.wrapper.style3 {
-			background: #f3f3f3 url("images/overlay.png");
+			background: #00f4f5 url("images/overlay.png");
 		}
 
 			.wrapper.style3 .title {
-				background: #f3f3f3 url("images/overlay.png");
+				background: #00f4f5 url("images/overlay.png");
 				color: #484d55;
 			}
 
@@ -2255,9 +2263,9 @@ input, select, textarea {
 
 		#intro p.style2 {
 			font-weight: 700;
-			color: #fff;
+                        color:  #ffd700;
 			border-radius: 0.35em;
-			box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.25);
+			box-shadow: inset 0px 0px 2px 2px rgba(255, 215, 0, 0.25); /* Cor dourada com transparência */ /* cor da mobile-hide */
 			font-size: 2.75em;
 			letter-spacing: 0.075em;
 			line-height: 1.35em;
