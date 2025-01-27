@@ -1772,22 +1772,35 @@ input, select, textarea {
 			color: #fff;
 		}
 
-			input[type="button"].style3:hover,
-			input[type="submit"].style3:hover,
-			input[type="reset"].style3:hover,
-			button.style3:hover,
-			.button.style3:hover {
-				background-color: #3f434b;
-			}
+			/* Estilo base do botão */
+                            input[type="button"].style3,
+                            input[type="submit"].style3,
+                            input[type="reset"].style3,
+                            button.style3,
+                            .button.style3 {
+                                position: relative;
+                                top: -35px; /* Fixa acima da posição original */
+                                transition: all 1.2s ease; /* Anima TODAS as propriedades (incluindo transform) */
+                            }
 
-			input[type="button"].style3:active,
-			input[type="submit"].style3:active,
-			input[type="reset"].style3:active,
-			button.style3:active,
-			.button.style3:active {
-				background-color: #1f232b;
-			}
+                            /* Efeito ao passar o mouse */
+                            input[type="button"].style3:hover,
+                            input[type="submit"].style3:hover,
+                            input[type="reset"].style3:hover,
+                            button.style3:hover,
+                            .button.style3:hover {
+                              background-color: rgba(255, 215, 0, 0.6);
+                              transform: translateY(-5px); /* Movimento fixo para cima */
+                            }
 
+                            /* Efeito ao clicar */
+                            input[type="button"].style3:active,
+                            input[type="submit"].style3:active,
+                            input[type="reset"].style3:active,
+                            button.style3:active,
+                            .button.style3:active {
+                              background-color: #1f232b;
+                            }
 /* List */
 
 	ul {
@@ -2787,6 +2800,36 @@ input, select, textarea {
 /* Small */
 
 	@media screen and (max-width: 736px) {
+            
+            /* Button */
+                input[type="button"].style1,
+                input[type="submit"].style1,
+                input[type="reset"].style1,
+                button.style1,
+                .button.style1 {
+                  width: 60%; /* Largura reduzida (ajuste o valor conforme necessário) */
+                  max-width: 150px; /* Limite máximo para não ficar muito largo */
+                  margin: 0 auto; /* Centraliza o botão horizontalmente */
+                  display: block; /* Garante que margin: auto funcione */
+                  padding: 0px 0px; /* Reduza o padding se necessário */
+                  box-sizing: border-box; /* Mantém padding dentro da largura */
+                  transition: all 1.2s ease; /* Mantém a transição suave */
+                }
+                
+                
+                input[type="button"].style3,
+                input[type="submit"].style3,
+                input[type="reset"].style3,
+                button.style3,
+                .button.style3 {
+                  width: 60%; /* Largura reduzida (ajuste o valor conforme necessário) */
+                  max-width: 150px; /* Limite máximo para não ficar muito largo */
+                  margin: 0 auto; /* Centraliza o botão horizontalmente */
+                  display: block; /* Garante que margin: auto funcione */
+                  padding: 0px 0px; /* Reduza o padding se necessário */
+                  box-sizing: border-box; /* Mantém padding dentro da largura */
+                  transition: all 1.2s ease; /* Mantém a transição suave */
+                }
 
 		/* Basic */
 
@@ -2960,7 +3003,7 @@ input, select, textarea {
                               
                               
 			#intro {
-				text-align: center;
+				text-align: center-top;
 				padding-right: 2em;
 				padding-left: 2em;
 				padding-bottom: 5em;
@@ -2977,14 +3020,14 @@ input, select, textarea {
 					line-height: 1em;
 					max-width: none; /* Remove qualquer limitação de largura */
                                         padding: 0; /* Remove espaçamento interno se necessário */
-                                        width: 100vw; /* Ocupa 100% da largura da viewport */
-                                        margin-left: calc(-50vw + 50%); /* Alinhamento especial para full-width */
+                                        width: 90vw; /* Ocupa 100% da largura da viewport */
+                                        margin-left: calc(-45vw + 50%); /* Alinhamento especial para full-width */
 				}
 
 		/* Features */
 
 			#features header.style1 {
-				padding-bottom: 4em;
+				padding-bottom: em;
 			}
 
 			#features ul.actions {
