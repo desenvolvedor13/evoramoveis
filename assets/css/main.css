@@ -2832,6 +2832,9 @@ input, select, textarea {
 					display: block;
 					margin: 0;
 				}
+                                
+                                
+				
 
 		/* Button */
 
@@ -2972,7 +2975,10 @@ input, select, textarea {
 					font-size: 1em;
 					letter-spacing: 0.05em;
 					line-height: 1em;
-					padding: 1em;
+					max-width: none; /* Remove qualquer limitação de largura */
+                                        padding: 0; /* Remove espaçamento interno se necessário */
+                                        width: 100vw; /* Ocupa 100% da largura da viewport */
+                                        margin-left: calc(-50vw + 50%); /* Alinhamento especial para full-width */
 				}
 
 		/* Features */
