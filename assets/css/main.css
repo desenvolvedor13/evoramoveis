@@ -1779,7 +1779,7 @@ input, select, textarea {
                             button.style3,
                             .button.style3 {
                                 position: relative;
-                                top: -35px; /* Fixa acima da posição original */
+                                top: -25px; /* Fixa acima da posição original */
                                 transition: all 1.2s ease; /* Anima TODAS as propriedades (incluindo transform) */
                             }
 
@@ -2095,7 +2095,7 @@ input, select, textarea {
 			.wrapper.style3 .image {
 				border: solid 10px #fff;
 			}
-
+                        
 /* Page Wrapper */
 
 	#page-wrapper > section {
@@ -2583,6 +2583,7 @@ input, select, textarea {
 		/* Intro */
 
 			#intro p.style3 {
+                            color: #2F333B;
 				width: auto;
 			}
 
