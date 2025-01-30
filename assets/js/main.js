@@ -8,6 +8,36 @@
 
 	var	$window = $(window),
 		$body = $('body');
+                
+                
+                
+                // Filtragem
+                document.addEventListener('DOMContentLoaded', function() {
+                  const filterButtons = document.querySelectorAll('.filter-button');
+                  const images = document.querySelectorAll('.floating-img');
+
+                  filterButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                      const filter = this.dataset.filter;
+
+                      // Remove classe active de todos os botões
+                      filterButtons.forEach(btn => btn.classList.remove('active'));
+                      // Adiciona classe active no botão clicado
+                      this.classList.add('active');
+
+                      // Filtra as imagens
+                      images.forEach(img => {
+                        if (filter === 'all' || img.dataset.filter === filter) {
+                          img.style.display = 'block';
+                          setTimeout(() => img.style.opacity = '1', 50);
+                        } else {
+                          img.style.opacity = '0';
+                          setTimeout(() => img.style.display = 'none', 300);
+                        }
+                      });
+                    });
+                  });
+                });
 
 	// Breakpoints.
 		breakpoints({
