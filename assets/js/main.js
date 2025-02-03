@@ -10,35 +10,88 @@
 		$body = $('body');
                 
                 
-                
-                // Filtragem
-                document.addEventListener('DOMContentLoaded', function() {
-                  const filterButtons = document.querySelectorAll('.filter-button');
-                  const images = document.querySelectorAll('.floating-img');
+                class FilterSystem {
+    constructor() {
+        this.filterButtons = document.querySelectorAll('.filter-btn');
+        this.searchInput = document.querySelector('.search-input');
+        this.items = document.querySelectorAll('.floating-img');
+        this.init();
+    }
 
-                  filterButtons.forEach(button => {
-                    button.addEventListener('click', function() {
-                      const filter = this.dataset.filter;
+    init() {
+        this.setupEventListeners();
+    }
 
-                      // Remove classe active de todos os botões
-                      filterButtons.forEach(btn => btn.classList.remove('active'));
-                      // Adiciona classe active no botão clicado
-                      this.classList.add('active');
+    setupEventListeners() {
+        // Filtros por botão
+        this.filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => this.handleFilterClick(btn));
+        });
 
-                      // Filtra as imagens
-                      images.forEach(img => {
-                        if (filter === 'all' || img.dataset.filter === filter) {
-                          img.style.display = 'block';
-                          setTimeout(() => img.style.opacity = '1', 50);
-                        } else {
-                          img.style.opacity = '0';
-                          setTimeout(() => img.style.display = 'none', 300);
-                        }
-                      });
-                    });
-                  });
-                });
+        // Filtro por pesquisa
+        this.searchInput.addEventListener('input', (e) => {
+            this.handleSearch(e.target.value.toLowerCase());
+        });
+    }
 
+    handleFilterClick(clickedBtn) {
+        // Atualiza estado dos botões
+        this.filterButtons.forEach(btn => btn.classList.remove('active'));
+        clickedBtn.classList.add('active');
+        
+        // Aplica filtros
+        const filter = clickedBtn.dataset.filter;
+        this.applyFilters(filter);
+    }
+
+    handleSearch(searchTerm) {
+        this.items.forEach(item => {
+            const matchesSearch = item.alt.toLowerCase().includes(searchTerm);
+            const matchesFilter = this.getActiveFilter().test(item.dataset.filter);
+            
+            this.toggleItem(item, matchesSearch && matchesFilter);
+        });
+    }
+
+    applyFilters(activeFilter) {
+        const filterRegex = activeFilter === 'all' ? /.*/ : new RegExp(activeFilter, 'i');
+        
+        this.items.forEach(item => {
+            const matchesFilter = filterRegex.test(item.dataset.filter);
+            const matchesSearch = item.alt.toLowerCase().includes(
+                this.searchInput.value.toLowerCase()
+            );
+            
+            this.toggleItem(item, matchesFilter && matchesSearch);
+        });
+    }
+
+    toggleItem(item, shouldShow) {
+        item.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        if(shouldShow) {
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+            item.style.pointerEvents = 'all';
+            setTimeout(() => item.style.display = 'block', 50);
+        } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.8)';
+            item.style.pointerEvents = 'none';
+            setTimeout(() => item.style.display = 'none', 300);
+        }
+    }
+
+    getActiveFilter() {
+        const activeBtn = document.querySelector('.filter-btn.active');
+        return activeBtn.dataset.filter === 'all' ? /.*/ : new RegExp(activeBtn.dataset.filter, 'i');
+    }
+}
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', () => {
+    const filterSystem = new FilterSystem();
+});
 	// Breakpoints.
 		breakpoints({
 			xlarge:  [ '1281px',  '1680px' ],
