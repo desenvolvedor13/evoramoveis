@@ -2062,7 +2062,7 @@ input, select, textarea {
 		.wrapper.style1 {
 			background: #FFFFFF url("images/overlay.png");
 			color: #ff00ff;
-			color: rgba(57, 255, 255, 0.75);
+			color: rgba(57, 255, 255, 0.55);
                         
 		}
 
@@ -2429,14 +2429,14 @@ input, select, textarea {
     border: 2px solid #e0e0e0;
     border-radius: 35px;
     min-width: 120px; /* Reduzido de 100px */
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     font-size: 0.9em; /* Tamanho de fonte reduzido */
 }
 
 .search-input:focus {
     border-color: #2f333b;
     outline: none;
-    box-shadow: 0 0 0 2px rgba(47, 51, 59, 0.1); /* Ajuste na cor do glow */
+    box-shadow: 0 0 0 2px rgba(47, 51, 59, 0.2); /* Ajuste na cor do glow */
 }
 
 
@@ -3171,7 +3171,7 @@ input, select, textarea {
 					font-size: 0.9em;
 					width: 18em;
 					height: 2.5em;
-					top: -2.5em;
+					top: -7.0em;
 					line-height: 2.5em;
 					margin-bottom: -2.5em;
 					margin-left: -9em;
