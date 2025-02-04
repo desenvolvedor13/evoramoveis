@@ -285,6 +285,75 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+                        
+                        
+                <!-- whatsapp -->
+                    <a 
+                        href="https://wa.me/554391345185?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20móveis!" 
+                        class="whatsapp-float" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Fale conosco pelo WhatsApp"
+                    >
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
 
-	</body>
+                    <style>
+                        /* Estilo do Botão Flutuante */
+                        .whatsapp-float {
+                            position: fixed;
+                            bottom: 30px;
+                            right: 30px;
+                            width: 60px;
+                            height: 60px;
+                            background: #25D366;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+                            transition: all 0.3s ease;
+                            z-index: 9999;
+                            animation: pulse 2s infinite;
+                        }
+
+                        .whatsapp-float i {
+                            color: white;
+                            font-size: 34px;
+                        }
+
+                        /* Efeitos de Hover e Foco */
+                        .whatsapp-float:hover,
+                        .whatsapp-float:focus {
+                            transform: scale(1.1) translateY(-5px);
+                            box-shadow: 0 8px 16px rgba(37, 211, 102, 0.4);
+                            background: #128C7E;
+                        }
+
+                        /* Animação de Pulsar */
+                        @keyframes pulse {
+                            0% { transform: scale(1); }
+                            50% { transform: scale(1.05); }
+                            100% { transform: scale(1); }
+                        }
+
+                        /* Versão Mobile */
+                        @media (max-width: 768px) {
+                            .whatsapp-float {
+                                bottom: 20px;
+                                right: 20px;
+                                width: 50px;
+                                height: 50px;
+                            }
+
+                            .whatsapp-float i {
+                                font-size: 28px;
+                            }
+                        }
+                    </style>
+
+                    <!-- Adicione o Font Awesome no <head> -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	
+        </body>
 </html>

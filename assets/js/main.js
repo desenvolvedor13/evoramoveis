@@ -33,7 +33,6 @@
             this.handleSearch(e.target.value.toLowerCase());
         });
     }
-
     handleFilterClick(clickedBtn) {
         // Atualiza estado dos botões
         this.filterButtons.forEach(btn => btn.classList.remove('active'));
@@ -92,6 +91,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const filterSystem = new FilterSystem();
 });
+
 	// Breakpoints.
 		breakpoints({
 			xlarge:  [ '1281px',  '1680px' ],
