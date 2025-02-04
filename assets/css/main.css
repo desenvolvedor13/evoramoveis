@@ -2115,10 +2115,11 @@ input, select, textarea {
             left: 0;
             width: 100%;
             height: 0px; /* Altura padrão */
-            background: url("../../images/banner.jpg") center top / 100% 60% no-repeat;
+            background: url("../../images/topBar.png") center top / 100% 60% no-repeat;
             padding: 0 0px;
             z-index: 1003;
           }
+          
           /* Ajuste para a homepage */
           .homepage #header {
             margin-top: 0em;
@@ -2134,6 +2135,10 @@ input, select, textarea {
 		position: relative;
 		top: 0em;
 	}
+        #logo,#nav {
+                    position: relative;
+                    z-index: 2; /* Deve ser maior que o z-index do overlay */
+                    }
 
 		#logo h1 {
                         margin-top: 1em;
@@ -3170,23 +3175,40 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-                            display: flex;
-                            align-items: center-top;
-                            justify-content: space-between;
-                            position: fixed;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 0px;
+                        background: url("../../images/topBarMin.png") center top/100% 60% no-repeat;
+                        padding: 0 0px;
+                        z-index: 1003;
+
+                        /* Novo overlay escuro */
+                        &::before {
+                            content: '';
+                            position: absolute;
                             top: 0;
                             left: 0;
                             width: 100%;
-                            height: 0px; /* Altura padrão */
-                            background: url("../../images/banner.jpg") center top / 100% 60% no-repeat;
-                            padding: 0 0px;
-                            z-index: 1003;
-                          }
-                          /* Ajuste para a homepage */
-                          .homepage #header {
-                            margin-top: 0em;
-                            height: 12em;
-                          }
+                            height: 60%;
+                            background: rgba(0, 0, 0, 0.3); /* Opacidade ajustável (0.3 = 30% escuro) */
+                            z-index: 1; /* Garante que fique acima do background mas abaixo do conteúdo */
+                        }
+                    }
+
+                    .homepage #header {
+                        margin-top: 0em;
+                        height: 12em;
+
+                        /* Ajuste de overlay para altura expandida */
+                        &::before {
+                            background: rgba(0, 0, 0, 0.5); /* Opacidade diferente se necessário */
+                        }
+                    }
 
 		/* Logo */
                
@@ -3196,7 +3218,11 @@ input, select, textarea {
 				padding-left: 2em;
 				padding-right: 2em;
 			}
-
+                        #logo,
+                            #nav {
+                                position: absolute;
+                                z-index: 2; /* Deve ser maior que o z-index do overlay */
+                            }
 				#logo h1 {
                                     margin-top: 2em;
 					font-size: 1.5em;
