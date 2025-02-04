@@ -2108,17 +2108,35 @@ input, select, textarea {
 
 	#header {
             display: flex;
-            align-items: center-top;
+            align-items: flex-start; /* Correção: center-top não é válido */
             justify-content: space-between;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 0px; /* Altura padrão */
-            background: url("../../images/topBar.png") center top / 100% 60% no-repeat;
+            height: 0px;
+            background: url("../../images/topBar.png") center top/100% 60% no-repeat;
             padding: 0 0px;
             z-index: 1003;
-          }
+
+            /* Overlay escuro semi-transparente */
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 60%;
+                background: rgba(0, 0, 0, 0.6); /* Opacidade aumentada para melhor contraste */
+                z-index: 1;
+                pointer-events: none; /* Permite interação com elementos abaixo */
+            }
+        }
+
+        
+        .homepage #header::before {
+            background: rgba(0, 0, 0, 0.5); /* Opacidade diferenciada para homepage */
+        }
           
           /* Ajuste para a homepage */
           .homepage #header {
@@ -2129,7 +2147,6 @@ input, select, textarea {
 /* Logo */
 
 	#logo {
-            
 		width: 100%;
 		text-align: center;
 		position: relative;
@@ -2633,7 +2650,7 @@ input, select, textarea {
 			}
 
 				#logo h1 {
-                                    margin-top: 0em;
+                                        margin-top: 1em;
 					font-size: 1.5em;
 					letter-spacing: 0.2em;
 				}
@@ -2672,6 +2689,7 @@ input, select, textarea {
 			}
 
 				#logo h1 {
+                                        margin-top: 1em;
 					font-size: 1.75em;
 				}
 
@@ -3224,7 +3242,7 @@ input, select, textarea {
                                 z-index: 2; /* Deve ser maior que o z-index do overlay */
                             }
 				#logo h1 {
-                                    margin-top: 2em;
+                                        margin-top: 1em;
 					font-size: 1.5em;
 					letter-spacing: 0.2em;
 				}
