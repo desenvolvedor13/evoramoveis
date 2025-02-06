@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterSystem = new FilterSystem();
 });
 
-	// Breakpoints.
+	// Breakpoints.(tamanhos de telas)
 		breakpoints({
 			xlarge:  [ '1281px',  '1680px' ],
 			large:   [ '981px',   '1280px' ],
