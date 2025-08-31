@@ -12,6 +12,7 @@ body {
   line-height: 1.6;
 }
 
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -37,6 +38,7 @@ nav a {
   font-weight: 500;
 }
 
+/* Conteúdo */
 .main-content {
   display: flex;
   flex-direction: column;
@@ -44,7 +46,6 @@ nav a {
   padding: 3rem 5%;
 }
 
-/* Seção principal */
 .product-intro {
   display: flex;
   justify-content: space-between;
@@ -148,43 +149,38 @@ nav a {
 }
 
 .color-box.selected {
-  border: 2px solid #000;
+  border: 3px solid #2f6b47;
+  transform: scale(1.1);
 }
 
-/* Faz a página ocupar a tela toda */
+/* Layout da página */
 html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Container principal para empurrar o footer pro fim */
 .page-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* O conteúdo cresce, empurrando o footer para baixo */
 main {
-    flex: 1;
+  flex: 1;
 }
 
-/* Footer centralizado */
 footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #f1f1f1;
+  text-align: center;
+  padding: 15px;
+  background-color: #f1f1f1;
 }
-/* Resultado do cálculo *//* Reset básico */
+
+/* Resultado */
 .result {
   margin-top: 1rem;
   font-weight: bold;
   color: #2f6b47;
   font-size: 1rem;
 }
-.color-box.selected {
-  border: 3px solid #2f6b47;  
-  transform: scale(1.1);
-  }

@@ -1,8 +1,9 @@
-// Selecionar inputs
+// Selecionar elementos
 const larguraInput = document.getElementById("largura");
 const alturaInput = document.getElementById("altura");
 const resultado = document.getElementById("resultado");
 const colorBoxes = document.querySelectorAll(".color-box");
+const productImage = document.getElementById("product-image");
 
 let precoM2 = 0;
 let corSelecionada = "";
@@ -35,6 +36,11 @@ colorBoxes.forEach(box => {
 
     precoM2 = parseFloat(box.dataset.preco);
     corSelecionada = box.dataset.nome;
+
+    // Trocar imagem do produto
+    const novaImg = box.dataset.img;
+    productImage.src = `assets/img/mdf_${corSelecionada}.webp`;
+    productImage.alt = `MDF cor ${corSelecionada}`;
 
     calcular();
   });
