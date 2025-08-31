@@ -9,7 +9,7 @@
 <body>
   <div class="page-container">
     <header>
-      <div class="logo">MDF</div>
+      <div class="logo">-MDF-</div>
       <nav>
         <ul>
           <li><a href="#">Início</a></li>
