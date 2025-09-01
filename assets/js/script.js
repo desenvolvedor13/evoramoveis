@@ -39,7 +39,7 @@ colorBoxes.forEach(box => {
 
     // Trocar imagem do produto
     const novaImg = box.dataset.img;
-    productImage.src = `assets/img/mdf_${corSelecionada}.png`;
+    productImage.src = `assets/img/mdf_${corSelecionada}.webp`;
     productImage.alt = `MDF cor ${corSelecionada}`;
 
     calcular();
