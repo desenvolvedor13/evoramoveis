@@ -23,11 +23,11 @@
       <section class="product-intro">
         <div class="content-left">
           <h1>MDF e corte sob medida</h1>
-          <p>Adquira MDF e corte sob medida do jeito que você precisa.</p>
+          <p>Adquira MDF e corte sob medida do jeito que você precisa. Trabalhamos com materiais de alta qualidade e oferecemos o melhor custo-benefício do mercado.</p>
           <button class="comprar">COMPRAR</button>
         </div>
         <div class="content-right">
-          <img id="product-image" src="assets/img/mdf.webp" alt="Placas de MDF">
+          <img id="product-image" src="https://placehold.co/500x300/1a2a6c/ffffff?text=Placas+MDF" alt="Placas de MDF">
         </div>
       </section>
 
@@ -70,6 +70,61 @@
     </footer>
   </div>
 
-  <script src="assets/js/script.js"></script>
+  <script>
+    // Script básico para demonstração
+    document.addEventListener('DOMContentLoaded', function() {
+      const colorBoxes = document.querySelectorAll('.color-box');
+      const resultDiv = document.getElementById('resultado');
+      const larguraInput = document.getElementById('largura');
+      const alturaInput = document.getElementById('altura');
+      const productImage = document.getElementById('product-image');
+      
+      // Função para calcular o preço
+      function calcularPreco() {
+        const largura = parseInt(larguraInput.value) || 0;
+        const altura = parseInt(alturaInput.value) || 0;
+        const area = (largura * altura) / 10000; // converter cm² para m²
+        const precoPorMetro = parseFloat(this.getAttribute('data-preco'));
+        const precoTotal = (area * precoPorMetro).toFixed(2);
+        const nomeCor = this.getAttribute('data-nome');
+        const imgSrc = this.getAttribute('data-img');
+        
+        // Atualizar a imagem do produto
+        if (imgSrc) {
+          productImage.src = imgSrc;
+        }
+        
+        // Exibir o resultado
+        resultDiv.textContent = `Preço para ${nomeCor}: R$ ${precoTotal} (${area.toFixed(2)} m²)`;
+        resultDiv.classList.add('highlight');
+        
+        // Remover a seleção anterior
+        colorBoxes.forEach(box => box.classList.remove('selected'));
+        
+        // Adicionar a seleção atual
+        this.classList.add('selected');
+      }
+      
+      // Adicionar eventos
+      colorBoxes.forEach(box => {
+        box.addEventListener('click', calcularPreco);
+      });
+      
+      // Atualizar o cálculo quando as dimensões mudarem
+      larguraInput.addEventListener('input', function() {
+        const selectedBox = document.querySelector('.color-box.selected');
+        if (selectedBox) {
+          calcularPreco.call(selectedBox);
+        }
+      });
+      
+      alturaInput.addEventListener('input', function() {
+        const selectedBox = document.querySelector('.color-box.selected');
+        if (selectedBox) {
+          calcularPreco.call(selectedBox);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
