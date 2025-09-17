@@ -50,10 +50,10 @@
           <div class="colors">
             <h3>Cor</h3>
             <div class="color-options">
-              <div class="color-box" style="background-color: black;" data-nome="Preto" data-preco="170" data-img="assets/img/mdf_preto.jpg"></div>
+              <div class="color-box" style="background-color: black;" data-nome="Preto" data-preco="170" data-img="assets/img/mdf_preto.webp"></div>
               <div class="color-box" style="background-color: white; border: 1px solid #ccc;" data-nome="Branco" data-preco="155" data-img="assets/img/mdf_branco.webp"></div>
               <div class="color-box" style="background-color: #D0B298;" data-nome="Admirado" data-preco="224" data-img="mdf_admirado.webp"></div>
-              <div class="color-box" style="background-color: #9E7F5E;" data-nome="Beton" data-preco="238" data-img="mdf_beton.png"></div>
+              <div class="color-box" style="background-color: #9E7F5E;" data-nome="Beton" data-preco="238" data-img="mdf_beton.webp"></div>
             </div>
           </div>
         </div>
@@ -70,61 +70,7 @@
     </footer>
   </div>
 
-  <script>
-    // Script básico para demonstração
-    document.addEventListener('DOMContentLoaded', function() {
-      const colorBoxes = document.querySelectorAll('.color-box');
-      const resultDiv = document.getElementById('resultado');
-      const larguraInput = document.getElementById('largura');
-      const alturaInput = document.getElementById('altura');
-      const productImage = document.getElementById('product-image');
-      
-      // Função para calcular o preço
-      function calcularPreco() {
-        const largura = parseInt(larguraInput.value) || 0;
-        const altura = parseInt(alturaInput.value) || 0;
-        const area = (largura * altura) / 10000; // converter cm² para m²
-        const precoPorMetro = parseFloat(this.getAttribute('data-preco'));
-        const precoTotal = (area * precoPorMetro).toFixed(2);
-        const nomeCor = this.getAttribute('data-nome');
-        const imgSrc = this.getAttribute('data-img');
-        
-        // Atualizar a imagem do produto
-        if (imgSrc) {
-          productImage.src = imgSrc;
-        }
-        
-        // Exibir o resultado
-        resultDiv.textContent = `Preço para ${nomeCor}: R$ ${precoTotal} (${area.toFixed(2)} m²)`;
-        resultDiv.classList.add('highlight');
-        
-        // Remover a seleção anterior
-        colorBoxes.forEach(box => box.classList.remove('selected'));
-        
-        // Adicionar a seleção atual
-        this.classList.add('selected');
-      }
-      
-      // Adicionar eventos
-      colorBoxes.forEach(box => {
-        box.addEventListener('click', calcularPreco);
-      });
-      
-      // Atualizar o cálculo quando as dimensões mudarem
-      larguraInput.addEventListener('input', function() {
-        const selectedBox = document.querySelector('.color-box.selected');
-        if (selectedBox) {
-          calcularPreco.call(selectedBox);
-        }
-      });
-      
-      alturaInput.addEventListener('input', function() {
-        const selectedBox = document.querySelector('.color-box.selected');
-        if (selectedBox) {
-          calcularPreco.call(selectedBox);
-        }
-      });
-    });
-  </script>
+  <!-- Remova o script interno e use apenas o externo -->
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
